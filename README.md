@@ -1,4 +1,21 @@
-# Welcome to your Lovable project
+
+# Solana NFT Minting App
+
+## Project Features
+
+This application allows users to:
+- Connect their Solana wallet
+- View their NFT collection
+- Mint new NFTs to their wallet
+- Transfer NFTs to other wallet addresses
+
+The app is built with:
+- Vite and React
+- TypeScript for type safety
+- Tailwind CSS for styling
+- shadcn/ui for UI components
+- Solana web3.js and wallet adapters
+- Metaplex Foundation SDK for NFT operations
 
 ## Project info
 
@@ -49,16 +66,6 @@ npm run dev
 - Select the "Codespaces" tab.
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
 ## How can I deploy this project?
 
