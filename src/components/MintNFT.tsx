@@ -84,8 +84,16 @@ const MintNFT: React.FC<MintNFTProps> = ({ onMintNFT, isMinting }) => {
             </motion.div>
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4 backdrop-blur-sm">
-            <h3 className="font-semibold text-lg mb-0">{nftName || 'My Solana NFT'}</h3>
-            <p className="text-sm text-white/80">#{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</p>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold text-lg mb-0">{nftName || 'My Solana NFT'}</h3>
+                <p className="text-sm text-white/80">#{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</p>
+              </div>
+              <div className="bg-primary/20 text-white px-3 py-1 rounded-full backdrop-blur-sm">
+                <span className="font-medium">{mintCount}</span>
+                <span className="text-sm ml-1">NFT{mintCount > 1 ? 's' : ''}</span>
+              </div>
+            </div>
           </div>
         </div>
         
