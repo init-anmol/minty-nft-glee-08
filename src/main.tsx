@@ -1,7 +1,15 @@
 
-import './polyfills';
+import './polyfills'; // Make sure polyfills are loaded first
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Wait for DOMContentLoaded to ensure the DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  const rootElement = document.getElementById("root");
+  if (rootElement) {
+    createRoot(rootElement).render(<App />);
+  } else {
+    console.error("Root element not found");
+  }
+});

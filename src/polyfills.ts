@@ -19,3 +19,30 @@ if (typeof window !== 'undefined') {
   // @ts-ignore
   window.process.env = window.process.env || {};
 }
+
+// Basic polyfills for Node.js built-ins
+// @ts-ignore
+window.process = window.process || {};
+
+// Stream polyfill
+if (typeof window !== 'undefined') {
+  // @ts-ignore
+  window.stream = {
+    Readable: class {}, 
+    PassThrough: class {}
+  };
+}
+
+// URL polyfill
+if (typeof window !== 'undefined' && !window.URL) {
+  // @ts-ignore
+  window.URL = URL;
+}
+
+// HTTP status codes polyfill
+if (typeof window !== 'undefined') {
+  // @ts-ignore
+  window.http = {
+    STATUS_CODES: {}
+  };
+}

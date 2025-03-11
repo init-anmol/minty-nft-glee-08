@@ -13,11 +13,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      'stream': 'stream-browserify',
+      'http': 'http-browserify',
+      'https': 'https-browserify',
+      'url': 'url',
     },
   },
   define: {
     'process.env': {},
-    'global': {},
+    'global': 'window',
   },
   build: {
     commonjsOptions: {
