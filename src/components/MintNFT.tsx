@@ -67,31 +67,25 @@ const MintNFT: React.FC<MintNFTProps> = ({ onMintNFT, isMinting }) => {
       </CardHeader>
       
       <CardContent className="pb-4">
-        <div className="relative mb-6 overflow-hidden rounded-xl">
-          <div className="aspect-square relative bg-gradient-to-br from-primary/20 via-background to-primary/10 flex items-center justify-center">
-            <div className="absolute inset-0 bg-black/5 backdrop-blur-[1px]" />
-            <div className="text-center z-10 p-6">
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="mb-4 mx-auto"
-              >
-                <img 
-                  src="https://raw.githubusercontent.com/init-anmol/images/refs/heads/main/AS_NFT.png" 
-                  alt="NFT Preview" 
-                  className="w-32 h-32 mx-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" 
-                />
-              </motion.div>
-              <h3 className="font-semibold text-lg mb-1">{nftName || 'My Solana NFT'}</h3>
-              <p className="text-sm text-muted-foreground">#{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</p>
-            </div>
+        {/* Full box NFT image display */}
+        <div className="w-full relative mb-6 overflow-hidden rounded-xl border-2 border-primary/20 shadow-lg">
+          <div className="w-full aspect-square relative bg-gradient-to-br from-primary/20 via-background to-primary/10 flex items-center justify-center">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="w-full h-full p-6 flex items-center justify-center"
+            >
+              <img 
+                src="https://raw.githubusercontent.com/init-anmol/images/refs/heads/main/AS_NFT.png" 
+                alt="NFT Preview" 
+                className="w-full max-w-xs mx-auto rounded-lg shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer" 
+              />
+            </motion.div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent flex items-end">
-            <div className="p-4 w-full">
-              <span className="text-xs uppercase tracking-wider text-white/90">Preview</span>
-              <h4 className="text-white font-medium">Solana NFT Collection</h4>
-            </div>
+          <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4 backdrop-blur-sm">
+            <h3 className="font-semibold text-lg mb-0">{nftName || 'My Solana NFT'}</h3>
+            <p className="text-sm text-white/80">#{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</p>
           </div>
         </div>
         
